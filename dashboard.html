@@ -93,9 +93,9 @@ button:hover{
 
 <script type="module">
 
-import { auth } from "./firebase.js";
+import { auth,db } from "./firebase.js";
 import { signOut } from "https://www.gstatic.com/firebasejs/12.1.0/firebase-auth.js";
-import { db } from "./firebase.js";
+
 import { collection, addDoc, serverTimestamp } from "https://www.gstatic.com/firebasejs/12.1.0/firebase-firestore.js";
 document.getElementById("addNoticeBtn").addEventListener("click", async()=>{
 
