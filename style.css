@@ -133,3 +133,112 @@ font-size:38px;
 margin-bottom:35px;
 color:#0057b8;
 }
+/* Admission */
+
+.admission{
+background:#0057b8;
+color:#fff;
+text-align:center;
+}
+
+.admission h2{
+color:#fff;
+margin-bottom:15px;
+}
+
+.btn2{
+display:inline-block;
+margin-top:20px;
+padding:12px 30px;
+background:#ffd43b;
+color:#000;
+text-decoration:none;
+border-radius:40px;
+font-weight:bold;
+transition:.3s;
+}
+
+.btn2:hover{
+background:#fff;
+}
+
+/* Founder */
+
+.founder-card{
+max-width:600px;
+margin:auto;
+background:#fff;
+padding:40px;
+border-radius:15px;
+text-align:center;
+box-shadow:0 10px 25px rgba(0,0,0,.1);
+}
+
+.founder-card i{
+font-size:60px;
+color:#0057b8;
+margin-bottom:15px;
+}
+
+/* Branch */
+
+.branch-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:25px;
+}
+
+.branch-box{
+background:#fff;
+padding:30px;
+border-radius:15px;
+box-shadow:0 8px 20px rgba(0,0,0,.08);
+transition:.3s;
+}
+
+.branch-box:hover{
+transform:translateY(-8px);
+}
+
+/* Teachers */
+
+.teacher-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:25px;
+}
+
+.teacher-card{
+background:#fff;
+padding:30px;
+text-align:center;
+border-radius:15px;
+box-shadow:0 8px 20px rgba(0,0,0,.08);
+transition:.3s;
+}
+
+.teacher-card:hover{
+transform:scale(1.05);
+}
+
+.teacher-card i{
+font-size:55px;
+color:#0057b8;
+margin-bottom:15px;
+}
+
+/* Notice */
+
+.notice-box{
+background:#fff;
+height:220px;
+padding:20px;
+border-radius:15px;
+box-shadow:0 8px 20px rgba(0,0,0,.08);
+overflow:hidden;
+}
+
+.notice-box p{
+margin-bottom:20px;
+font-size:18px;
+}
