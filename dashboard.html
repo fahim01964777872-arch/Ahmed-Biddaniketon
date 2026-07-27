@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Admin Dashboard - Ahmed Biddaniketon</title>
+
+<style>
+body{
+    font-family: Arial, sans-serif;
+    background:#f2f5f9;
+    margin:0;
+}
+
+.header{
+    background:#0b5ed7;
+    color:white;
+    padding:20px;
+    text-align:center;
+}
+
+.container{
+    padding:20px;
+}
+
+.card{
+    background:white;
+    padding:20px;
+    margin:15px 0;
+    border-radius:12px;
+    box-shadow:0 5px 15px rgba(0,0,0,.1);
+}
+
+button{
+    background:#dc3545;
+    color:white;
+    border:none;
+    padding:12px 20px;
+    border-radius:8px;
+    cursor:pointer;
+}
+
+button:hover{
+    background:#bb2d3b;
+}
+</style>
+
+</head>
+
+<body>
+
+<div class="header">
+<h2>Ahmed Biddaniketon Admin Panel</h2>
+</div>
+
+
+<div class="container">
+
+<div class="card">
+<h3>Welcome Admin 👋</h3>
+<p>এখান থেকে স্কুলের তথ্য নিয়ন্ত্রণ করা যাবে।</p>
+</div>
+
+
+<div class="card">
+<h3>Notice</h3>
+<p>নোটিশ ম্যানেজমেন্ট এখানে যোগ হবে।</p>
+</div>
+
+
+<div class="card">
+<h3>Gallery</h3>
+<p>ছবি আপলোড অপশন এখানে যোগ হবে।</p>
+</div>
+
+
+<div class="card">
+<button id="logoutBtn">Logout</button>
+</div>
+
+
+</div>
+
+
+<script type="module">
+
+import { auth } from "./firebase.js";
+import { signOut } from "https://www.gstatic.com/firebasejs/12.1.0/firebase-auth.js";
+
+
+document.getElementById("logoutBtn").addEventListener("click",()=>{
+
+signOut(auth).then(()=>{
+alert("Logout Successful");
+window.location.href="admin.html";
+});
+
+});
+
+
+</script>
+
+
+</body>
+</html>
