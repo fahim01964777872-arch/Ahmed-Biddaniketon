@@ -1,1 +1,75 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ahmed Biddaniketon Admin</title>
 
+<style>
+body{
+font-family:Arial,sans-serif;
+background:#f2f5f9;
+display:flex;
+justify-content:center;
+align-items:center;
+height:100vh;
+margin:0;
+}
+
+.login-box{
+background:#fff;
+padding:30px;
+border-radius:12px;
+width:320px;
+box-shadow:0 5px 20px rgba(0,0,0,.15);
+text-align:center;
+}
+
+h2{
+color:#0b5ed7;
+margin-bottom:20px;
+}
+
+input{
+width:100%;
+padding:12px;
+margin:10px 0;
+border:1px solid #ccc;
+border-radius:8px;
+box-sizing:border-box;
+}
+
+button{
+width:100%;
+padding:12px;
+background:#0b5ed7;
+color:white;
+border:none;
+border-radius:8px;
+cursor:pointer;
+font-size:16px;
+}
+
+button:hover{
+background:#094db2;
+}
+</style>
+
+</head>
+<body>
+
+<div class="login-box">
+<h2>Admin Login</h2>
+
+<input type="email" id="email" placeholder="Email">
+
+<input type="password" id="password" placeholder="Password">
+
+<button id="loginBtn">Login</button>
+
+<p id="msg"></p>
+
+</div>
+
+</body>
+</html>
