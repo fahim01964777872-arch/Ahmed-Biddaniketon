@@ -342,7 +342,39 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
 
 <script type="module" src="firebase.js"></script>
 <script src="script.js"></script>
+<script type="module">
 
+import { db } from "./firebase.js";
+
+import { collection, getDocs, query, orderBy } from "https://www.gstatic.com/firebasejs/12.1.0/firebase-firestore.js";
+
+
+const noticeList = document.getElementById("noticeList");
+
+
+const q = query(collection(db,"notices"), orderBy("date","desc"));
+
+
+const snapshot = await getDocs(q);
+
+
+noticeList.innerHTML = "";
+
+
+snapshot.forEach((doc)=>{
+
+const data = doc.data();
+
+noticeList.innerHTML += `
+<div class="notice-item">
+<h3>${data.notice}</h3>
+</div>
+`;
+
+});
+
+
+</script>
 </body>
 </html>
 
