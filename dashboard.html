@@ -156,19 +156,6 @@ await addDoc(collection(db,"gallery"),{
 image:imageName,
 date:serverTimestamp()
 });
-document.getElementById("addImageBtn").addEventListener("click", async()=>{
-
-const imageName = document.getElementById("imageName").value;
-
-if(imageName==""){
-alert("ছবির নাম লিখুন");
-return;
-}
-
-await addDoc(collection(db,"gallery"),{
-image:imageName,
-date:serverTimestamp()
-});
 
 alert("Image Added Successfully");
 
