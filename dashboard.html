@@ -123,6 +123,10 @@ date:serverTimestamp()
 alert("Notice Added Successfully");
 
 document.getElementById("noticeTitle").value="";
+
+});
+
+
 document.getElementById("addImageBtn").addEventListener("click", async()=>{
 
 const imageName = document.getElementById("imageName").value;
@@ -141,7 +145,6 @@ alert("Image Added Successfully");
 
 document.getElementById("imageName").value="";
 
-});
 });
 document.getElementById("logoutBtn").addEventListener("click",()=>{
 
