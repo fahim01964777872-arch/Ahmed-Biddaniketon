@@ -156,7 +156,28 @@ await addDoc(collection(db,"gallery"),{
 image:imageName,
 date:serverTimestamp()
 });
+document.getElementById("addTeacherBtn").addEventListener("click", async()=>{
 
+const name = document.getElementById("teacherName").value;
+const role = document.getElementById("teacherRole").value;
+
+if(name=="" || role==""){
+alert("সব তথ্য লিখুন");
+return;
+}
+
+await addDoc(collection(db,"teachers"),{
+name:name,
+role:role,
+date:serverTimestamp()
+});
+
+alert("Teacher Added Successfully");
+
+document.getElementById("teacherName").value="";
+document.getElementById("teacherRole").value="";
+
+});
 alert("Image Added Successfully");
 
 document.getElementById("imageName").value="";
