@@ -163,6 +163,9 @@ document.getElementById("imageName").value="";
 
 });
 
+
+document.getElementById("addTeacherBtn").addEventListener("click", async()=>{
+
 const name = document.getElementById("teacherName").value;
 const role = document.getElementById("teacherRole").value;
 
@@ -183,6 +186,8 @@ document.getElementById("teacherName").value="";
 document.getElementById("teacherRole").value="";
 
 });
+
+
 document.getElementById("logoutBtn").addEventListener("click",()=>{
 
 signOut(auth).then(()=>{
