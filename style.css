@@ -242,3 +242,133 @@ overflow:hidden;
 margin-bottom:20px;
 font-size:18px;
 }
+/* ===== Gallery ===== */
+
+.gallery-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+gap:25px;
+}
+
+.gallery-grid img{
+width:100%;
+height:260px;
+object-fit:cover;
+border-radius:15px;
+cursor:pointer;
+transition:.4s;
+box-shadow:0 10px 20px rgba(0,0,0,.1);
+}
+
+.gallery-grid img:hover{
+transform:scale(1.05);
+}
+
+/* ===== Contact ===== */
+
+.contact{
+background:#0057b8;
+color:#fff;
+text-align:center;
+}
+
+.contact h2{
+color:#fff;
+}
+
+.contact p{
+font-size:18px;
+margin:15px 0;
+}
+
+.contact i{
+color:#ffd43b;
+margin-right:10px;
+}
+
+/* ===== Footer ===== */
+
+footer{
+background:#002d62;
+color:#fff;
+text-align:center;
+padding:35px 20px;
+}
+
+footer h3{
+margin-bottom:10px;
+font-size:28px;
+}
+
+footer p{
+margin:8px 0;
+}
+
+/* ===== Responsive ===== */
+
+@media(max-width:768px){
+
+.navbar{
+padding:15px;
+}
+
+.nav-links{
+display:none;
+}
+
+.menu-btn{
+display:block;
+}
+
+.hero-content h1{
+font-size:38px;
+}
+
+.hero-content p{
+font-size:18px;
+}
+
+section h2{
+font-size:30px;
+}
+
+.teacher-grid,
+.branch-grid,
+.gallery-grid{
+grid-template-columns:1fr;
+}
+
+}
+
+/* ===== Smooth Animation ===== */
+
+.branch-box,
+.teacher-card,
+.founder-card,
+.notice-box,
+.gallery-grid img{
+transition:0.35s ease;
+}
+
+.branch-box:hover,
+.teacher-card:hover,
+.founder-card:hover,
+.notice-box:hover{
+transform:translateY(-8px);
+box-shadow:0 15px 30px rgba(0,0,0,.15);
+}
+
+/* ===== Scrollbar ===== */
+
+::-webkit-scrollbar{
+width:10px;
+}
+
+::-webkit-scrollbar-thumb{
+background:#0057b8;
+border-radius:20px;
+}
+
+::-webkit-scrollbar-track{
+background:#e9eef7;
+}
