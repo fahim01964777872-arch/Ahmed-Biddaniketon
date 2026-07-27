@@ -374,7 +374,37 @@ noticeList.innerHTML += `
 });
 
 </script>
+<script type="module">
 
+import { db } from "./firebase.js";
+
+import { collection, getDocs } from "https://www.gstatic.com/firebasejs/12.1.0/firebase-firestore.js";
+
+
+const galleryList = document.getElementById("galleryList");
+
+
+const snapshot = await getDocs(collection(db,"gallery"));
+
+
+galleryList.innerHTML = "";
+
+
+snapshot.forEach((doc)=>{
+
+const data = doc.data();
+
+
+galleryList.innerHTML += `
+
+<img src="images/${data.image}" alt="School Gallery">
+
+`;
+
+});
+
+
+</script>
 </body>
 </html>
 
