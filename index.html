@@ -361,6 +361,31 @@ galleryList.innerHTML += `
 
 });
 
+</script>
+<script type="module">
+
+import { db } from "./firebase.js";
+import { collection, getDocs } from "https://www.gstatic.com/firebasejs/12.1.0/firebase-firestore.js";
+
+const teacherList = document.getElementById("teacherList");
+
+const snapshot = await getDocs(collection(db,"teachers"));
+
+teacherList.innerHTML = "";
+
+snapshot.forEach((doc)=>{
+
+const data = doc.data();
+
+teacherList.innerHTML += `
+<div class="teacher-card">
+<i class="fa-solid fa-user"></i>
+<h3>${data.name}</h3>
+<p>${data.role}</p>
+</div>
+`;
+
+});
 
 </script>
 </body>
