@@ -389,6 +389,7 @@ teacherList.innerHTML += `
 import { db } from "./firebase.js";
 import { collection, getDocs } from "https://www.gstatic.com/firebasejs/12.1.0/firebase-firestore.js";
 
+const founderImage = document.getElementById("founderImage");
 const founderName = document.getElementById("founderName");
 const founderMessage = document.getElementById("founderMessage");
 
@@ -398,6 +399,7 @@ snapshot.forEach((doc)=>{
 
 const data = doc.data();
 
+founderImage.src = "images/" + data.image;
 founderName.innerText = data.name;
 founderMessage.innerText = data.message;
 
