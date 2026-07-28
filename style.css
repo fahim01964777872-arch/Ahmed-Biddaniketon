@@ -236,10 +236,30 @@ text-align:center;
 border-radius:15px;
 box-shadow:0 8px 20px rgba(0,0,0,.08);
 transition:.3s;
+cursor:pointer;
 }
 
 .teacher-card:hover{
 transform:scale(1.05);
+}
+
+.teacher-card img{
+width:120px;
+height:120px;
+border-radius:50%;
+object-fit:cover;
+margin-bottom:15px;
+border:4px solid #0057b8;
+}
+
+.teacher-card h3{
+margin:10px 0;
+color:#0057b8;
+}
+
+.teacher-card p{
+font-size:16px;
+color:#555;
 }
 
 .teacher-card i{
