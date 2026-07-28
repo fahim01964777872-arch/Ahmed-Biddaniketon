@@ -380,8 +380,14 @@ snapshot.forEach((doc)=>{
 const data = doc.data();
 
 teacherList.innerHTML += `
-<div class="teacher-card">
-<i class="fa-solid fa-user"></i>
+<div class="teacher-card"
+onclick="showTeacher(
+'${data.name}',
+'${data.role}',
+'${data.image}',
+'${data.bio}'
+)">
+<img src="images/${data.image}" alt="${data.name}">
 <h3>${data.name}</h3>
 <p>${data.role}</p>
 </div>
