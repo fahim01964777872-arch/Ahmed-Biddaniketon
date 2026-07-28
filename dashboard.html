@@ -245,9 +245,14 @@ alert("সব তথ্য লিখুন");
 return;
 }
 
+const image = document.getElementById("teacherImage").value;
+const bio = document.getElementById("teacherBio").value;
+
 await addDoc(collection(db,"teachers"),{
 name:name,
 role:role,
+image:image,
+bio:bio,
 date:serverTimestamp()
 });
 
