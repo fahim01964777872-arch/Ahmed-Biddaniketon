@@ -358,7 +358,30 @@ data-id="${teacherDoc.id}">
 `;
 
 });
+document.querySelectorAll(".editTeacherBtn").forEach(btn=>{
 
+btn.addEventListener("click", async()=>{
+
+const newName = prompt("শিক্ষকের নাম", btn.dataset.name);
+
+if(newName==null || newName=="") return;
+
+const newRole = prompt("পদবি", btn.dataset.role);
+
+if(newRole==null || newRole=="") return;
+
+await updateDoc(doc(db,"teachers",btn.dataset.id),{
+name:newName,
+role:newRole
+});
+
+alert("Teacher Updated Successfully");
+
+loadTeachers();
+
+});
+
+});
 document.querySelectorAll(".deleteTeacherBtn").forEach(btn=>{
 
 btn.addEventListener("click", async()=>{
