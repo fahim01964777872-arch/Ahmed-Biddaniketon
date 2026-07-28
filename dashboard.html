@@ -242,7 +242,44 @@ loadNotices();
 }
 
 loadNotices();
+const galleryAdminList = document.getElementById("galleryAdminList");
 
+async function loadGallery(){
+
+const snapshot = await getDocs(collection(db,"gallery"));
+
+galleryAdminList.innerHTML = "";
+
+snapshot.forEach((imageDoc)=>{
+
+const data = imageDoc.data();
+
+galleryAdminList.innerHTML += `
+<div style="border:1px solid #ddd;padding:10px;margin:10px 0;border-radius:8px;">
+<p>${data.image}</p>
+<button class="deleteImageBtn" data-id="${imageDoc.id}">🗑️ Delete</button>
+</div>
+`;
+
+});
+
+document.querySelectorAll(".deleteImageBtn").forEach(btn=>{
+
+btn.addEventListener("click", async()=>{
+
+if(!confirm("ছবিটি মুছে ফেলবেন?")) return;
+
+await deleteDoc(doc(db,"gallery",btn.dataset.id));
+
+loadGallery();
+
+});
+
+});
+
+}
+
+loadGallery();
 document.getElementById("logoutBtn").addEventListener("click",()=>{
 
 signOut(auth).then(()=>{
