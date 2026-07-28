@@ -264,7 +264,11 @@ const data = noticeDoc.data();
 
 noticeAdminList.innerHTML += `
 <div style="border:1px solid #ddd;padding:10px;margin:10px 0;border-radius:8px;">
-<p>${data.title}</p>
+<h4>${data.title}</h4>
+
+<button onclick="showNotice('${data.details}')">
+📖 বিস্তারিত দেখুন
+</button>
 <button class="edit-btn"
 data-id="${noticeDoc.id}"
 data-notice="${data.title}">
