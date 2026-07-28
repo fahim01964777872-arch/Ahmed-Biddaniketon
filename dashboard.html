@@ -292,8 +292,6 @@ const newNotice = prompt("নতুন নোটিশ লিখুন", btn.dat
 
 if(newNotice==null || newNotice=="") return;
 
-const oldDetails = await getDocs(collection(db,"notices"));
-
 const newDetails = prompt("বিস্তারিত লিখুন", "");
 
 if(newDetails==null) return;
