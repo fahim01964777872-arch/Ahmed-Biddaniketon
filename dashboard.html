@@ -290,6 +290,45 @@ loadGallery();
 }
 
 loadGallery();
+const teacherAdminList = document.getElementById("teacherAdminList");
+
+async function loadTeachers(){
+
+const snapshot = await getDocs(collection(db,"teachers"));
+
+teacherAdminList.innerHTML = "";
+
+snapshot.forEach((teacherDoc)=>{
+
+const data = teacherDoc.data();
+
+teacherAdminList.innerHTML += `
+<div style="border:1px solid #ddd;padding:10px;margin:10px 0;border-radius:8px;">
+<p><b>${data.name}</b></p>
+<p>${data.role}</p>
+<button class="deleteTeacherBtn" data-id="${teacherDoc.id}">🗑️ Delete</button>
+</div>
+`;
+
+});
+
+document.querySelectorAll(".deleteTeacherBtn").forEach(btn=>{
+
+btn.addEventListener("click", async()=>{
+
+if(!confirm("শিক্ষককে মুছে ফেলবেন?")) return;
+
+await deleteDoc(doc(db,"teachers",btn.dataset.id));
+
+loadTeachers();
+
+});
+
+});
+
+}
+
+loadTeachers();
 document.getElementById("logoutBtn").addEventListener("click",()=>{
 
 signOut(auth).then(()=>{
