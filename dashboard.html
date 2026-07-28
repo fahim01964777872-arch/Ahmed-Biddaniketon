@@ -344,7 +344,7 @@ teacherAdminList.innerHTML += `
 <p><b>${data.name}</b></p>
 <p>${data.role}</p>
 
-</div><button class="editTeacherBtn"
+<button class="editTeacherBtn"
 data-id="${teacherDoc.id}"
 data-name="${data.name}"
 data-role="${data.role}">
@@ -355,8 +355,9 @@ data-role="${data.role}">
 data-id="${teacherDoc.id}">
 🗑️ Delete
 </button>
-`;
 
+</div>
+`;
 });
 document.querySelectorAll(".editTeacherBtn").forEach(btn=>{
 
