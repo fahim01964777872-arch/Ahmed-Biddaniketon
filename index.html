@@ -384,6 +384,26 @@ teacherList.innerHTML += `
 });
 
 </script>
+<script type="module">
+
+import { db } from "./firebase.js";
+import { collection, getDocs } from "https://www.gstatic.com/firebasejs/12.1.0/firebase-firestore.js";
+
+const founderName = document.getElementById("founderName");
+const founderMessage = document.getElementById("founderMessage");
+
+const snapshot = await getDocs(collection(db,"founder"));
+
+snapshot.forEach((doc)=>{
+
+const data = doc.data();
+
+founderName.innerText = data.name;
+founderMessage.innerText = data.message;
+
+});
+
+</script>
 </body>
 </html>
 
