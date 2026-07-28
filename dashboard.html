@@ -416,6 +416,28 @@ loadTeachers();
 }
 
 loadTeachers();
+document.getElementById("saveFounderBtn").addEventListener("click", async()=>{
+
+const name = document.getElementById("founderName").value;
+const message = document.getElementById("founderMessage").value;
+
+if(name=="" || message==""){
+alert("সব তথ্য লিখুন");
+return;
+}
+
+await addDoc(collection(db,"founder"),{
+name:name,
+message:message,
+date:serverTimestamp()
+});
+
+alert("Founder Saved Successfully");
+
+document.getElementById("founderName").value="";
+document.getElementById("founderMessage").value="";
+
+});
 document.getElementById("logoutBtn").addEventListener("click",()=>{
 
 signOut(auth).then(()=>{
