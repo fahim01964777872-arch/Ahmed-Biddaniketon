@@ -251,7 +251,25 @@ data-id="${noticeDoc.id}">
 `;
 
 });
+document.querySelectorAll(".edit-btn").forEach(btn=>{
 
+btn.addEventListener("click", async()=>{
+
+const newNotice = prompt("নতুন নোটিশ লিখুন", btn.dataset.notice);
+
+if(newNotice==null || newNotice=="") return;
+
+await updateDoc(doc(db,"notices",btn.dataset.id),{
+notice:newNotice
+});
+
+alert("Notice Updated Successfully");
+
+loadNotices();
+
+});
+
+});
 document.querySelectorAll(".delete-btn").forEach(btn=>{
 
 btn.addEventListener("click", async()=>{
