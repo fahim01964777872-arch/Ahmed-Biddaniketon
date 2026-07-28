@@ -194,7 +194,44 @@ document.getElementById("teacherName").value="";
 document.getElementById("teacherRole").value="";
 
 });
+const noticeAdminList = document.getElementById("noticeAdminList");
 
+async function loadNotices(){
+
+const snapshot = await getDocs(collection(db,"notices"));
+
+noticeAdminList.innerHTML = "";
+
+snapshot.forEach((noticeDoc)=>{
+
+const data = noticeDoc.data();
+
+noticeAdminList.innerHTML += `
+<div style="border:1px solid #ddd;padding:10px;margin:10px 0;border-radius:8px;">
+<p>${data.notice}</p>
+<button class="delete-btn" data-id="${noticeDoc.id}">🗑️ Delete</button>
+</div>
+`;
+
+});
+
+document.querySelectorAll(".delete-btn").forEach(btn=>{
+
+btn.addEventListener("click", async()=>{
+
+if(!confirm("নোটিশটি মুছে ফেলবেন?")) return;
+
+await deleteDoc(doc(db,"notices",btn.dataset.id));
+
+loadNotices();
+
+});
+
+});
+
+}
+
+loadNotices();
 
 document.getElementById("logoutBtn").addEventListener("click",()=>{
 
