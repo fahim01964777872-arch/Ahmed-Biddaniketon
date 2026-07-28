@@ -292,7 +292,7 @@ const newNotice = prompt("নতুন নোটিশ লিখুন", btn.dat
 
 if(newNotice==null || newNotice=="") return;
 
-const newDetails = prompt("বিস্তারিত লিখুন", "");
+const newDetails = prompt("বিস্তারিত লিখুন", btn.dataset.details);
 
 if(newDetails==null) return;
 
