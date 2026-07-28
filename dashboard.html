@@ -181,14 +181,16 @@ updateDoc
 document.getElementById("addNoticeBtn").addEventListener("click", async()=>{
 
 const title = document.getElementById("noticeTitle").value;
+const details = document.getElementById("noticeDetails").value;
 
-if(title==""){
-alert("Notice লিখুন");
+if(title=="" || details==""){
+alert("সব তথ্য লিখুন");
 return;
 }
 
 await addDoc(collection(db,"notices"),{
-notice:title,
+title:title,
+details:details,
 date:serverTimestamp()
 });
 
