@@ -288,7 +288,7 @@ const newNotice = prompt("নতুন নোটিশ লিখুন", btn.dat
 if(newNotice==null || newNotice=="") return;
 
 await updateDoc(doc(db,"notices",btn.dataset.id),{
-notice:newNotice
+title:newNotice
 });
 
 alert("Notice Updated Successfully");
