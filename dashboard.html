@@ -145,7 +145,15 @@ button:hover{
 import { auth,db } from "./firebase.js";
 import { signOut } from "https://www.gstatic.com/firebasejs/12.1.0/firebase-auth.js";
 
-import { collection, addDoc, serverTimestamp, getDocs, deleteDoc, doc } from "https://www.gstatic.com/firebasejs/12.1.0/firebase-firestore.js";
+import {
+collection,
+addDoc,
+serverTimestamp,
+getDocs,
+deleteDoc,
+doc,
+updateDoc
+} from "https://www.gstatic.com/firebasejs/12.1.0/firebase-firestore.js";
 document.getElementById("addNoticeBtn").addEventListener("click", async()=>{
 
 const title = document.getElementById("noticeTitle").value;
